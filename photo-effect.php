@@ -3,7 +3,7 @@
 Plugin Name: WP Photo Effects
 Plugin URI: http://itglobepk.com/
 Description: Apply Beautiful Effects on Images By Using Shortcode
-Version: 1.1.2
+Version: 1.2.0
 Author: Muhammad Rehman
 Author URI: http://muhammadrehman.com/
 License: GPLv2 or later
@@ -22,6 +22,7 @@ add_action('wp_footer','wppe_tiltjs');
 
 function wppe_tiltjs() {
     wp_enqueue_script( 'script-tiltfx', plugins_url( '/js/tiltfx.js' , __FILE__ ) );
+    wp_enqueue_script( 'wppe-script', plugins_url( '/js/script.js' , __FILE__ ) );
 }
 
 function wppe_effect( $atts ) {
@@ -43,7 +44,7 @@ function wppe_effect( $atts ) {
         'width' => '300px',
         'height' => '300px',
         'fitscreen' => 'no',
-		'radius' => '',
+        'radius' => '',
         'link' => '#',
         'border' => '1px',
         'target' => '_self'
@@ -70,7 +71,7 @@ function wppe_effect( $atts ) {
     $width = 'width:'.$a['width'].';';
     $height = 'height:'.$a['height'];
     $fitscreen = $a['fitscreen'];
-	$radius = $a['radius'];
+    $radius = $a['radius'];
     $link = $a['link'];
     $border = 'solid '.$a['border'].' #000 !important';
     $target = $a['target'];
@@ -89,8 +90,8 @@ function wppe_effect( $atts ) {
         </style>
         <?php
     }
-	
-	// Apply radius effect on specific image
+
+    // Apply radius effect on specific image
     if($radius != '') {
         ?>
         <style>
@@ -128,11 +129,11 @@ function wppe_effect( $atts ) {
     $img = '<ul class="grid grid--xray">
 			 <li class="grid__item '.$rand_id.'" style="'.$width.'">
 			  <div class="grid__img '.$filter_effect.'" style="'.$overflow.$width.$height.'">';
-                if($link != '#')
-                    $img .= '<a href="'.$link.'" target="'.$target.'"><img src="'.$img_url.'" class="'.$class.'" '.$data_tilt.' /></a>';
-                else if($link == '#')
-                    $img .= '<img src="'.$img_url.'" class="'.$class.'" '.$data_tilt.' />';
-              $img .= '</div>
+    if($link != '#')
+        $img .= '<a href="'.$link.'" target="'.$target.'"><img src="'.$img_url.'" class="'.$class.'" '.$data_tilt.' /></a>';
+    else if($link == '#')
+        $img .= '<img src="'.$img_url.'" class="'.$class.'" '.$data_tilt.' />';
+    $img .= '</div>
              </li>
             </ul>';
 
