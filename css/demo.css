@@ -682,3 +682,286 @@ figure:hover+span {
         opacity: 0;
     }
 }
+
+/** v1.2.2 **/
+.wppe-wrapper {
+	width: 60%;
+	margin: 40px auto;
+}
+
+div.wppe-gallery {
+	margin-top: 30px;
+}
+
+div.wppe-gallery ul {
+	list-style-type: none;
+	margin-left: 35px;
+}
+
+/* animation */
+div.wppe-gallery ul li, div.wppe-gallery li img {
+	-webkit-transition: all 0.1s ease-in-out;
+  	-moz-transition: all 0.1s ease-in-out;
+  	-o-transition: all 0.1s ease-in-out;
+  	transition: all 0.1s ease-in-out;
+}
+
+div.wppe-gallery ul li {
+	position: relative;
+	float: left;
+	width: 130px;
+	height: 130px;
+	margin: 5px;
+	padding: 5px;
+	z-index: 0;
+	list-style-type: none;
+}
+
+/* Make sure z-index is higher on hover */
+/* Ensure that hover image overlapped the others */
+div.wppe-gallery ul li:hover {
+	z-index: 5;
+}
+
+/* Image is position nicely under li */
+div.wppe-gallery ul li img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 1px solid #dddddd;
+	padding: 5px;
+	width: 130px;
+	height: 130px;
+	background: #f0f0f0;
+}
+
+div.wppe-gallery ul li img:hover {
+	width: 200px;
+	height: 200px;
+	margin-top: -130px;
+	margin-left: -130px;
+	top: 65%;
+	left: 65%;
+    max-width: none;
+}
+
+p.attribution {
+	font-family: 'Consolas';
+	color: #000;
+	clear: both;
+	text-align: center;
+	line-height: 25px;
+	padding-top: 30px;
+}
+
+p.attribution a {
+	color: #4c8d7c;
+}
+
+/* Responsive hack */
+@media only screen and (min-width: 499px) and (max-width: 1212px) {
+	.wppe-wrapper {
+		width: 500px;
+	}
+}
+
+@media only screen and (max-width: 498px) {
+	.wppe-wrapper {
+		width: 300px;
+	}
+
+	div.wppe-gallery ul {
+		list-style-type: none;
+		margin: 0;
+	}
+}
+
+/** Gradient Hover Effect **/
+.wppe-gradient-effect {
+  background: #000;
+  background: -moz-linear-gradient(-45deg, #000000 0%, #000000 25%, #1e539e 50%, #ff3083 75%, #7800a8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #000000 0%,#000000 25%,#1e539e 50%,#ff3083 75%,#7800a8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #000000 0%,#000000 25%,#1e539e 50%,#ff3083 75%,#7800a8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 500px;
+  height: 500px;
+  max-width: 100vw;
+  max-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  transition: .5s all;
+}
+  
+.wppe-gradient-effect__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #000 url(https://images.unsplash.com/photo-1466657718950-8f9346c04f8f?dpr=1&auto=format&fit=crop&w=800&h=800&q=80&cs=tinysrgb) no-repeat center center;
+  background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: .5;
+    mix-blend-mode: screen;
+  }
+  
+.wppe-gradient-effect__title {
+    position: relative;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  
+.wppe-gradient-effect:hover {
+    background-position: 100% 100%;
+}
+.wppe-gradient-effect__title {
+  text-shadow: 0 0 20px rgba(0,0,0,1);
+}
+
+/**
+Image hover effect with icon and split caption
+**/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+figure.wppe {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 220px;
+  width: 100%;
+  background: #000000;
+}
+figure.wppe img {
+  opacity: 1;
+  width: 100%;
+  position: relative;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.wppe .center {
+  border-radius: 5px;
+  display: block;
+  content: '';
+  position: absolute;
+  background-color: #000;
+  top: 50%;
+  left: 50%;
+  height: 70px;
+  width: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+figure.wppe .center i {
+  font-size: 38px;
+  padding: 6px;
+  color: #ffffff;
+  line-height: 70px;
+  opacity: 0.3;
+}
+figure.wppe figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+figure.wppe figcaption > div {
+  float: left;
+  height: 100%;
+  overflow: hidden;
+  width: 50%;
+  position: relative;
+}
+figure.wppe figcaption a {
+  opacity: 0.7;
+}
+figure.wppe figcaption a:hover {
+  opacity: 1;
+}
+figure.wppe figcaption h3 {
+  background-color: #222;
+  word-spacing: -0.1em;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1em;
+  opacity: 0;
+  position: absolute;
+  -webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
+  transition: opacity 0.45s,-webkit-transform 0.45s,-moz-transform 0.45s,-o-transform 0.45s,transform 0.45s;
+}
+figure.wppe figcaption .left h3 {
+  border-radius: 5px 0 0 5px;
+  top: 50%;
+  padding: 4px 35px 4px 10px;
+  right: 0;
+  -webkit-transform: translate(100%, 0px);
+  transform: translate(100%, 0px);
+}
+figure.wppe figcaption .right h3 {
+  border-radius: 0 5px 5px 0;
+  bottom: 50%;
+  padding: 4px 10px 4px 35px;
+  padding-left: 30px;
+  -webkit-transform: translate(-100%, 0px);
+  transform: translate(-100%, 0px);
+}
+figure.wppe a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+figure.wppe .red {
+  background-color: #8c212a;
+}
+figure.wppe .yellow {
+  background-color: #945600;
+}
+figure.wppe .white {
+  background-color: #ffffff;
+  color: #444444;
+}
+figure.wppe:hover img,
+figure.wppe.hover img {
+  opacity: 0.5;
+}
+figure.wppe:hover figcaption .left h3,
+figure.wppe.hover figcaption .left h3 {
+  opacity: 1;
+  -webkit-transform: translate(0%, 0px);
+  transform: translate(0%, 0px);
+}
+figure.wppe:hover figcaption .right h3,
+figure.wppe.hover figcaption .right h3 {
+  opacity: 1;
+  -webkit-transform: translate(0%, 0px);
+  transform: translate(0%, 0px);
+}
+figure.wppe:hover .center,
+figure.wppe.hover .center {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+figure.wppe:hover .center i,
+figure.wppe.hover .center i {
+  -webkit-transform: translate(0%, -10px);
+  transform: translate(0%, -10px);
+}

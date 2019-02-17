@@ -10,6 +10,10 @@ You can find all the available shortcodes, classes and code preview in the docum
 [Styles using ClassName](http://plugins.muhammadrehman.com/#wppe-classname)
 
 ## Changelog
+* 1.2.2
+    Compatible upto WordPress 4.9.8
+	Added More Styles/Effects
+
 * 1.2.0
     Add Classes to apply styles on images
 	Fixed css issue

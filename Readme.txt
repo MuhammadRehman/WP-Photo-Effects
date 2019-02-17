@@ -1,10 +1,10 @@
 === WP Photo Effects ===
 Contributors: Muhammad Rehman
-Tags: wp photo effects, photo style, photo effects, photo design, photos hover effects, photo hover effect, wp hover effects, image effects
+Tags: image effects, image hover, image hover effects, photos hover effects, hover effects
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&business=navycoral@gmail.com&item_name=Donation For Plugin
 Requires at least: 4.0
-Tested up to: 4.9.4
-Stable tag: 1.2.0
+Tested up to: 4.9.8
+Stable tag: 1.2.2
 License: GPLv2
 License URI: GPLv2
 
@@ -34,6 +34,13 @@ If successful, click Activate Plugin to activate it, or Return to Plugin Install
 Just after installing WP Photo Effects, You can use any of the provided shortcodes and classes by WP Photo Effects
 
 == Changelog ==
+
+= 1.2.2 =
+- Compatible upto WordPress 4.9.8
+- Added More Styles/Effects
+
+= 1.2.1 =
+- Integrate Freemius
 
 = 1.2.0 =
 - Add Classes to apply styles on images

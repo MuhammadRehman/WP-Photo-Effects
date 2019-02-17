@@ -3,7 +3,7 @@
 Plugin Name: WP Photo Effects
 Plugin URI: http://itglobepk.com/
 Description: Apply Beautiful Effects on Images By Using Shortcode
-Version: 1.2.0
+Version: 1.2.2
 Author: Muhammad Rehman
 Author URI: http://muhammadrehman.com/
 License: GPLv2 or later
@@ -142,3 +142,35 @@ function wppe_effect( $atts ) {
 
 // shortcode to display images with some effects
 add_shortcode( 'wppe_effect', 'wppe_effect' );
+
+// Create a helper function for easy SDK access.
+function wppe_freemius() {
+    global $wppe_freemius;
+
+    if ( ! isset( $wppe_freemius ) ) {
+        // Include Freemius SDK.
+        require_once dirname(__FILE__) . '/freemius/start.php';
+
+        $wppe_freemius = fs_dynamic_init( array(
+            'id'                  => '1883',
+            'slug'                => 'wp-photo-effects',
+            'type'                => 'plugin',
+            'public_key'          => 'pk_9666c7d7b35b6800f21d74f8a13c6',
+            'is_premium'          => false,
+            'has_addons'          => false,
+            'has_paid_plans'      => false,
+            'menu'                => array(
+                'account'        => false,
+                'contact'        => false,
+                'support'        => false,
+            ),
+        ) );
+    }
+
+    return $wppe_freemius;
+}
+
+// Init Freemius.
+wppe_freemius();
+// Signal that SDK was initiated.
+do_action( 'wppe_freemius_loaded' );
